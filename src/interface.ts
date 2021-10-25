@@ -57,12 +57,37 @@ const frontEnd:Developer = {
     skills:['js','react']
 }
 
-interface extendsDeveloper extends Person {
+interface ExtendsDeveloper extends Person {
     skills: string[];
 }
 
-const extednsABlue : extendsDeveloper = {
+const extednsABlue : ExtendsDeveloper = {
     name:'ablue',
     age:20,
     skills:['js','react']
 }
+
+type TypePerson = {
+    name: string;
+    age?:number;
+}
+
+type TypeDeveloper = Person & {     // 인터셉션 타입 : Person과 {} 안을 만족해야한다.
+    skills: string[];
+}
+
+const typePersonABlue : TypePerson = {
+    name:'ablue'
+}
+
+const expert: TypeDeveloper = {
+    name:'김개발',
+    skills:['js','react']
+}
+
+type People = Person[];     // Person[] 타입을 이제 People 이란 이름으로 사용 할 수 있게 됩니다.
+const people : People = [typePersonABlue, expert];
+
+type Color = 'red' | 'orange' | 'yellow';
+const typeColor : Color = 'red';
+const colors : Color[] = ['red', 'orange']; // 이런시긍로 사용할 수 있다.
