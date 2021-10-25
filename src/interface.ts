@@ -34,3 +34,35 @@ const shapes: Shape[] = [new Circle(5), new Rectangle(10,5)];
 shapes.forEach(shape => {
     console.log(shape.getArea());
 })
+
+// 일반 객체를 interface로 타입 설정하기
+
+interface Person {
+    name: string;
+    age?: number;   // ?는 옵셔널 체이닝 오퍼레이터(optional chaining operator)이다. age를 선언하지 않거나 undefined가 아니라면 number가 된다는 뜻이다.
+}
+
+interface Developer {
+    name: string;       // Person과 중복되는 속성이 있다. 이러한 경우 extends 기능을 이용하자
+    age?: NumberConstructor;
+    skills: string[];
+}
+
+const ablue:Person = {
+    name:'ablue',
+    age:20
+}
+const frontEnd:Developer = {
+    name:"ablue",
+    skills:['js','react']
+}
+
+interface extendsDeveloper extends Person {
+    skills: string[];
+}
+
+const extednsABlue : extendsDeveloper = {
+    name:'ablue',
+    age:20,
+    skills:['js','react']
+}
