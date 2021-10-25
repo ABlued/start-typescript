@@ -55,3 +55,20 @@
   }
 }
 ```
+
+4. 기본적인 타입스크립트 파일 만들기
+
+```
+// src/practice.ts
+const message: string = 'hello world';
+console.log(message);
+```
+
+이렇게 입력한 후 터미널에 `tsc` 명령어를 입력하면<br>
+dist/practics.js 가 추가되며 그 안에 코드는 이와 같다.
+
+```
+"use strict";
+var message = 'hello world';
+console.log(message);
+```
